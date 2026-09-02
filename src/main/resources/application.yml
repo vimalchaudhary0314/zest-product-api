@@ -1,0 +1,45 @@
+server:
+  port: 8080
+  forward-headers-strategy: framework
+
+spring:
+  application:
+    name: zest-product-api
+
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:zest_product_db}?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+
+  jackson:
+    default-property-inclusion: non_null
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+app:
+  jwt:
+    # Base64-encoded 256-bit development key. Replace in production.
+    secret: ${JWT_SECRET:VGhpc0lzQVN0cm9uZ0RldmVsb3BtZW50U2VjcmV0S2V5Rm9yWmVzdFByb2R1Y3RBcGlfMTIzNDU2}
+    access-token-expiration: ${JWT_ACCESS_EXPIRATION:900000}
+    refresh-token-expiration: ${JWT_REFRESH_EXPIRATION:604800000}

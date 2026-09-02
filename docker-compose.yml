@@ -1,0 +1,37 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: zest-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: zest_product_db
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  app:
+    build: .
+    container_name: zest-product-api
+    restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_NAME: zest_product_db
+      DB_USERNAME: root
+      DB_PASSWORD: root
+      JWT_SECRET: VGhpc0lzQVN0cm9uZ0RldmVsb3BtZW50U2VjcmV0S2V5Rm9yWmVzdFByb2R1Y3RBcGlfMTIzNDU2
+    ports:
+      - "8080:8080"
+
+volumes:
+  mysql_data:
