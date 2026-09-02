@@ -1,3 +1,21 @@
+
+<img width="626" height="500" alt="image" src="https://github.com/user-attachments/assets/bda7ce15-0ba8-4db6-a27b-768155214908" />
+<img width="857" height="442" alt="image" src="https://github.com/user-attachments/assets/ba12d94a-b9bb-4ae2-ade0-b98c2f69ea47" />
+
+<img width="1212" height="501" alt="image" src="https://github.com/user-attachments/assets/4f987c1f-f5a8-409e-814e-c587b9c2d14c" />
+
+<img width="837" height="480" alt="image" src="https://github.com/user-attachments/assets/b44efd5e-3fe8-472a-8412-b0d56d98d99c" />
+
+
+
+<img width="1431" height="851" alt="image" src="https://github.com/user-attachments/assets/ea74ee79-1209-44f1-9f9e-19579f47062d" />
+
+<img width="1427" height="833" alt="image" src="https://github.com/user-attachments/assets/434f324b-4743-412b-aaa1-4a362d10aa74" />
+
+<img width="1428" height="795" alt="image" src="https://github.com/user-attachments/assets/fad03e9e-a7b7-4601-845f-18fa522eb6e4" />
+
+
+<img width="1426" height="815" alt="image" src="https://github.com/user-attachments/assets/651d2981-fe01-4d51-a9d9-84f979d6fa32" />
 # Zest India IT - Product REST API Assignment
 
 Production-style Java 17 + Spring Boot REST API implementing Product CRUD, Items, JWT authentication, refresh-token rotation, RBAC, validation, pagination, Swagger/OpenAPI, tests and Docker.
